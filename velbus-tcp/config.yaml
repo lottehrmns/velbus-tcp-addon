@@ -1,6 +1,6 @@
 name: "Velbus TCP Bridge"
 description: "Bridges a Velbus USB interface to a TCP socket for use with the Home Assistant Velbus integration."
-version: "1.0.0"
+version: "1.0.1"
 slug: "velbus_tcp"
 init: false
 
