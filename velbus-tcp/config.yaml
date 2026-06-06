@@ -1,6 +1,6 @@
 name: "Velbus TCP Bridge"
 description: "Bridges a Velbus USB interface to a TCP socket for use with the Home Assistant Velbus integration."
-version: "1.0.2"
+version: "1.0.3"
 slug: "velbus_tcp"
 init: false
 
@@ -14,10 +14,10 @@ uart: true
 # Expose the TCP port to the HA host so the Velbus integration can connect
 ports:
   27015/tcp: 27015
-  27016/tcp: 27016
+  8445/tcp: 8445
 ports_description:
   27015/tcp: "Velbus TCP bridge port (Home Assistant)"
-  27016/tcp: "Velbus TCP bridge port (VelbusLink)"
+  8445/tcp: "Velbus TCP bridge port (VelbusLink)"
 
 # User-configurable options shown in the add-on Configuration tab
 options:
@@ -26,7 +26,10 @@ options:
   tcp_port: 27015
   tcp_auth: false
   tcp_auth_key: ""
-  velbuslink_port: 27016
+  velbuslink_port: 8445
+  velbuslink_auth: false
+  velbuslink_auth_key: ""
+  velbuslink_ssl: false
 
 schema:
   serial_autodiscover: bool
@@ -35,3 +38,6 @@ schema:
   tcp_auth: bool
   tcp_auth_key: str
   velbuslink_port: int
+  velbuslink_auth: bool
+  velbuslink_auth_key: str
+  velbuslink_ssl: bool

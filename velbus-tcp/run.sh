@@ -7,6 +7,9 @@ TCP_PORT=$(bashio::config 'tcp_port')
 TCP_AUTH=$(bashio::config 'tcp_auth')
 TCP_AUTH_KEY=$(bashio::config 'tcp_auth_key')
 VELBUSLINK_PORT=$(bashio::config 'velbuslink_port')
+VELBUSLINK_AUTH=$(bashio::config 'velbuslink_auth')
+VELBUSLINK_AUTH_KEY=$(bashio::config 'velbuslink_auth_key')
+VELBUSLINK_SSL=$(bashio::config 'velbuslink_ssl')
 
 bashio::log.info "Starting Velbus TCP Bridge..."
 bashio::log.info "Serial autodiscover: ${SERIAL_AUTODISCOVER}"
@@ -34,11 +37,11 @@ cat > /tmp/settings.json <<EOF
             "host": "0.0.0.0",
             "port": ${VELBUSLINK_PORT},
             "relay": true,
-            "ssl": false,
+            "ssl": ${VELBUSLINK_SSL},
             "cert": "",
             "pk": "",
-            "auth": false,
-            "auth_key": ""
+            "auth": ${VELBUSLINK_AUTH},
+            "auth_key": "${VELBUSLINK_AUTH_KEY}"
         }
     ],
     "serial": {
