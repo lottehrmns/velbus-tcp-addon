@@ -19,7 +19,7 @@ cat > /tmp/settings.json <<EOF
     },
     "connections": [
         {
-            "host": "",
+            "host": "0.0.0.0",
             "port": ${TCP_PORT},
             "relay": true,
             "ssl": false,
